@@ -330,7 +330,7 @@ bool Element::isCompatible(sp<const Element>e) {
 }
 
 Element::Builder::Builder(sp<RS> rs) {
-    mRS = rs;
+    mRS = rs.get();
     mSkipPadding = false;
 }
 

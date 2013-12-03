@@ -160,7 +160,7 @@ class RS : public android::LightRefBase<RS> {
 class BaseObj : public android::LightRefBase<BaseObj> {
 protected:
     void *mID;
-    sp<RS> mRS;
+    RS* mRS;
     String8 mName;
 
     BaseObj(void *id, sp<RS> rs);
@@ -371,7 +371,7 @@ public:
 
     class Builder {
     private:
-        sp<RS> mRS;
+        RS* mRS;
         android::Vector<sp<Element> > mElements;
         android::Vector<android::String8> mElementNames;
         android::Vector<uint32_t> mArraySizes;
@@ -550,7 +550,7 @@ public:
 
     class Builder {
     protected:
-        sp<RS> mRS;
+        RS* mRS;
         uint32_t mDimX;
         uint32_t mDimY;
         uint32_t mDimZ;
